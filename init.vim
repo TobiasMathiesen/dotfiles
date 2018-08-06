@@ -7,8 +7,16 @@ set shiftwidth=4
 " Clear search highlight on <esc>
 nnoremap <silent> <esc> :noh<cr><esc>
 
-" <F5> to :RustRun
-nnoremap <F5> :RustRun <CR>
+" <F4> to save file + cargo build
+nnoremap <F4> :w <CR> :!cargo build<CR>
+" <F5> to save file + cargo run
+nnoremap <F5> :w <CR> :!cargo run<CR>
+
+" Copy to buffer
+vmap <C-c> :w! ~/.vimbuffer<CR>
+nmap <C-c> :.w! ~/.vimbuffer<CR>
+"Paste from buffer
+map <C-p> :r ~/.vimbuffer<CR>
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
